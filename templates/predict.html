@@ -5,8 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/predict.css">
 </head>
 <body>
-    <h1 action="/predict">Hi</h1>
+    <section id="prediction-form">
+        <form class="form" action="/predict", method="POST">
+            <h1 class="my-3 text-center">Predictor</h1>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="date" class="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="mintemp" class="mintemp"> Minimum temprature</label>
+                        <input type="text" class="form-control" id="mintemp" name="mintemp">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="maxtemp" class="maxtemp">Maximum Temperature</label>
+                        <input type="text" class="form-control" id="maxtemp" name="maxtemp">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="humidity9am" class="humidity9am">Humidity </label>
+                        <input type="text" class="form-control" id="humidity9am" name="humidity9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="pressure9am" class="pressure9am">Dew Point</label>
+                        <input type="text" class="form-control" id="pressure9am" name="pressure9am">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="pressure3pm" class="pressure3pm">Pressure </label>
+                        <input type="text" class="form-control" id="pressure3pm" name="pressure3pm">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="pressure3pm" class="pressure3pm">Cloudcover</label>
+                        <input type="text" class="form-control" id="pressure3pm" name="pressure3pm">
+                    </div>
+                </div>
+               
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="raintoday" class="raintoday" name="raintoday">Rain Today</label>
+                        <select class="raintoday" id="raintoday" name="raintoday" aria-label="Rain Today">
+                            <option selected>Did it Rain Today</option>
+                            <option value= 1>Yes</option>
+                            <option value= 0>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                    <button type="submit" class="btn btn-info button" style="margin-left: 100%;">Predict</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div>
+         <h1><center> {{ prediction }} </center></h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
